@@ -64,9 +64,6 @@ AI-sentiment-final/
 git clone https://github.com/kayorde25/AI-sentiment-final.git
 cd AI-sentiment-final
 
-Install dependencies
-pip install -r requirements.txt
-
 2. Install dependencies
 pip install -r requirements.txt
 ▶️ Running the Application
@@ -81,44 +78,49 @@ python test_sentiment_analysis.py
 ✔ Uses mocking to simulate API responses
 ✔ Does not depend on external API availability
 
+🧹Running Unit Tests
+python test_sentiment_analysis.py
+Uses mocked API responses
+Ensures tests pass even if the Watson API is unavailable
 🧹 Static Code Analysis
 
-Run pylint:
+Run Pylint:
 
 python -m pylint server.py
 python -m pylint SentimentAnalysis/sentiment_analysis.py
-
-✔ Ensures code quality and PEP8 compliance
-
+Ensures code quality and PEP8 compliance
+All functions now have docstrings and final newlines
 ⚠️ Error Handling
 
 The application gracefully handles:
 
-❌ Invalid input text
-🌐 API failures
+❌ Empty or invalid text input
+🌐 API request failure
 ⏱️ Network timeouts
 
 Example response:
 
-Invalid input! Try again.
+Invalid input! Please enter some text.
+Unable to analyze sentiment. Please try again later.
 🧠 How It Works
-User enters text in the browser
-JavaScript sends a GET request to Flask
-Flask calls Watson NLP API
-API returns sentiment + confidence score
-Result is displayed to the user
-📷 Example Output
-The given text has been identified as SENT_POSITIVE with a confidence score of 0.9976.
+User enters text in the web page input field
+JavaScript sends a GET request to the Flask backend
+Flask calls Watson NLP API for sentiment analysis
+Result (label + confidence score) is returned and displayed
 
 🔮 Future Improvements
 🌍 Multi-language support
 📊 Sentiment visualization dashboard
-🐳 Docker containerization
-☁️ Cloud deployment (Render / AWS / GCP)
-🔐 API key security and environment variables
+🐳 Docker containerization for easier deployment
+🔐 Environment variables for API keys
+☁️ Continuous deployment and CI/CD via GitHub Actions
 
 👨‍💻 Author
 
 Abiola Olaleye
 
 GitHub: https://github.com/kayorde25
+
+⭐ Acknowledgements
+
+This project uses IBM Watson NLP BERT model for sentiment analysis and is deployed using Render.
