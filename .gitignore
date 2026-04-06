@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE/editor
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local/sensitive files
+github kayorde25.txt
